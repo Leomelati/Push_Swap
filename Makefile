@@ -6,7 +6,7 @@
 #    By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/24 10:59:55 by lmartins          #+#    #+#              #
-#    Updated: 2021/08/13 06:13:54 by lmartins         ###   ########.fr        #
+#    Updated: 2021/08/13 06:31:30 by lmartins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,8 +23,8 @@ LIB = $(LIB_DIR)/libft.a
 
 # Compiler Infos
 
-CC = gcc -Wall -Wextra -Werror -g
-# CC = gcc
+#CC = gcc -Wall -Wextra -Werror -g
+CC = gcc
 
 INCLUDE = -I ./include -I $(LIB_DIR)
 INCLUDE_FLAGS = -L $(LIB_DIR) -lft
@@ -40,7 +40,7 @@ RM = rm -rf
 all:	$(NAME)
 
 $(NAME): $(OBJ_FILES) $(LIB)
-	@$(CC) $(OBJ_FILES) $(LIB) $(INCLUDE_FLAGS) -o $(NAME)
+	$(CC) $(OBJ_FILES) $(LIB) $(INCLUDE_FLAGS) -o $(NAME)
 
 $(LIB):
 	$(MAKE) -C $(LIB_DIR)
@@ -50,7 +50,7 @@ clean:
 	$(RM) $(OBJ_FILES)
 
 lclean: clean
-	@rm $(NAME)
+	rm $(NAME)
 	$(MAKE) -C libft/ lclean
 
 fclean:	clean lclean
@@ -59,4 +59,4 @@ fclean:	clean lclean
 re:	fclean all
 
 .c.o:
-	@$(CC) -c $< -o $(<:.c=.o) $(INCLUDE)
+	$(CC) -c $< -o $(<:.c=.o) $(INCLUDE)

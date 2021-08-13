@@ -6,7 +6,7 @@
 #    By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/24 10:59:55 by lmartins          #+#    #+#              #
-#    Updated: 2021/06/05 07:20:59 by lmartins         ###   ########.fr        #
+#    Updated: 2021/08/13 06:32:07 by lmartins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,17 +35,17 @@ RM = rm -rf
 all:	$(NAME)
 
 $(NAME): $(OBJ_FILES)
-	@ar rcs $(NAME) $(OBJ_FILES)
+	ar rcs $(NAME) $(OBJ_FILES)
 
 clean:
-	@$(RM) $(OBJ_FILES)
+	$(RM) $(OBJ_FILES)
 
 lclean: clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
 fclean:	clean lclean
 	
 re:	fclean all
 
 .c.o:
-	@$(CC) -c $< -o $(<:.c=.o) $(INCLUDES)
+	$(CC) -c $< -o $(<:.c=.o) $(INCLUDES)
