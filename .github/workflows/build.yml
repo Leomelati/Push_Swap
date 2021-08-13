@@ -14,12 +14,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
         
-    - name: make
+    - name: Primeiro make
       run: make
     - name: make clean
       run: make clean
+    - name: Segundo make
+      run: make
     - name: make fclean
       run: make fclean
+    - name: Terceiro make
+      run: make
     - name: make lclean
       run: make lclean
     - name: make re
