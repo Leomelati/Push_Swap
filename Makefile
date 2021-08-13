@@ -6,14 +6,14 @@
 #    By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/24 10:59:55 by lmartins          #+#    #+#              #
-#    Updated: 2021/08/13 06:31:30 by lmartins         ###   ########.fr        #
+#    Updated: 2021/08/13 07:00:10 by lmartins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Src Infos
 
 SRC_DIR = ./src
-SRC = $(SRC_DIR)/main.c
+SRC = $(SRC_DIR)/main.c $(SRC_DIR)/free.c $(SRC_DIR)/parse.c
 
 OBJ_FILES = $(SRC:.c=.o)
 

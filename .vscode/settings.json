@@ -1,0 +1,11 @@
+{
+	"cSpell.words": [
+		"NSEW",
+		"readed",
+		"sprite"
+	],
+	"files.associations": {
+		"type_traits": "cpp",
+		"push_swap.h": "c"
+	}
+}

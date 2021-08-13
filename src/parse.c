@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/13 06:28:49 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/13 06:58:29 by lmartins         ###   ########.fr       */
+/*   Created: 2021/08/13 06:57:46 by lmartins          #+#    #+#             */
+/*   Updated: 2021/08/13 07:23:17 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	check_args(int argc, char **argv)
 {
-	t_stack	stacks;
-
-	check_args(argc, argv);
-
-	return (0);
+	if (argc <= 1)
+		ft_error(ERROR_ARG);
 }
+
+
