@@ -6,14 +6,14 @@
 #    By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/24 10:59:55 by lmartins          #+#    #+#              #
-#    Updated: 2021/08/13 07:00:10 by lmartins         ###   ########.fr        #
+#    Updated: 2021/08/17 07:17:40 by lmartins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Src Infos
 
 SRC_DIR = ./src
-SRC = $(SRC_DIR)/main.c $(SRC_DIR)/free.c $(SRC_DIR)/parse.c
+SRC = $(SRC_DIR)/main.c $(SRC_DIR)/free.c $(SRC_DIR)/parse.c $(SRC_DIR)/init.c
 
 OBJ_FILES = $(SRC:.c=.o)
 
@@ -24,7 +24,7 @@ LIB = $(LIB_DIR)/libft.a
 # Compiler Infos
 
 #CC = gcc -Wall -Wextra -Werror -g
-CC = gcc
+CC = gcc -g
 
 INCLUDE = -I ./include -I $(LIB_DIR)
 INCLUDE_FLAGS = -L $(LIB_DIR) -lft

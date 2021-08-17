@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:53:43 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/13 07:22:36 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/17 07:15:23 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,9 @@ char	*define_error_message(int error_code)
 {
 	if (error_code == ERROR_ARG)
 		return ("Error\nInvalid number of args.");
+	else if (error_code == ERROR_CHAR)
+		return ("Error\nInvalid char.");
+	else if (error_code == ERROR_DUPLICATED)
+		return ("Error\nDuplicated value.");
 	return (NULL);
 }
