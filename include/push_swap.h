@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:51:04 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/17 07:22:16 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/18 05:44:16 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ typedef struct s_stack
 
 int	check_letters(int argc, char **argv);
 int	check_args(int argc, char **argv);
-int	check_duplicate(t_stack *stack, int index);
+int	check_duplicate(t_stack *stack, int num, int index);
 int	parse_stack(int argc, char **argv, t_stack *stacks);
 
 /*
@@ -69,6 +69,6 @@ char	*define_error_message(int error_code);
 ** init.c
 */
 
-t_stack*	init_stacks(int argc);
+t_stack	init_stacks(int argc);
 
 #endif

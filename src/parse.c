@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:57:46 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/17 07:16:32 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/18 05:45:11 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,18 @@ int	check_args(int argc, char **argv)
 		ft_error(ERROR_CHAR);
 }
 
-int	check_duplicate(t_stack *stack, int index)
+int	check_duplicate(t_stack *stack, int num, int index)
 {
 	int i;
-	int num;
 
 	i = 0;
-	num = stack->a[index];
 	while (i < index)
 	{
-		if (stack->a[i] == num)
+		if (stack->a[i] == num && index != 1)
 			ft_error(ERROR_DUPLICATED);
 		i++;
 	}
+	stack->a[i] = num;
 }
 
 int	parse_stack(int argc, char **argv, t_stack *stack)
@@ -69,9 +68,7 @@ int	parse_stack(int argc, char **argv, t_stack *stack)
 	while (i < argc)
 	{
 		num = ft_atoi(argv[i]);
-		check_duplicate(stack, i - 1);
-		stack->a[i - 1] = num;
-		printf("%d\n", stack->a[i - 1]);
+		check_duplicate(stack, num, i - 1);
 		i++;
 	}
 	return (TRUE);
