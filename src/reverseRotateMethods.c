@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   auxiliar.c                                         :+:      :+:    :+:   */
+/*   reverseRotateMethods.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/27 06:37:30 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/27 08:52:51 by lmartins         ###   ########.fr       */
+/*   Created: 2021/08/27 08:38:39 by lmartins          #+#    #+#             */
+/*   Updated: 2021/08/27 09:07:33 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_one_down(char *stack, int qnt_elements)
+void	reverse_rotate(char *stack, int qnt_elements)
 {
-	int		i;
 	char	temp;
+	char	last;
+	int		i;
 
-	i = 0;
+	last = stack[qnt_elements - 1];
+	i = 1;
 	while (i < qnt_elements)
 	{
 		temp = stack[i];
@@ -25,16 +27,11 @@ void	push_one_down(char *stack, int qnt_elements)
 		stack[i + 1] = temp;
 		i++;
 	}
+	stack[0] = last;
 }
 
-void	push_one_up(char *stack, int qnt_elements)
+void	reverse_rotate_rrr(t_stack	*stacks)
 {
-	int		i;
-
-	i = 0;
-	while (i < qnt_elements)
-	{
-		stack[i] = stack[i + 1];
-		i++;
-	}
+	reverse_rotate(stacks->a, stacks->qnt_a);
+	reverse_rotate(stacks->b, stacks->qnt_b);
 }

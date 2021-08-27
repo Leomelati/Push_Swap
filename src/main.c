@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:28:49 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/27 08:30:50 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/27 08:45:05 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,22 @@ int	main(int argc, char **argv)
 
 	printf("--ROTATE B--\n");
 	rotate(stacks.b, stacks.qnt_b);
+	print_both(&stacks);
+
+	printf("--ROTATE RR--\n");
+	rotate_rr(&stacks);
+	print_both(&stacks);
+
+	printf("--REVERSE ROTATE A--\n");
+	reverse_rotate(stacks.a, stacks.qnt_a);
+	print_both(&stacks);
+
+	printf("--REVERSE ROTATE B--\n");
+	reverse_rotate(stacks.b, stacks.qnt_b);
+	print_both(&stacks);
+
+	printf("--REVERSE ROTATE RR--\n");
+	reverse_rotate_rrr(&stacks);
 	print_both(&stacks);
 
 	return (0);

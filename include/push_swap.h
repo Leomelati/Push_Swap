@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:51:04 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/27 07:23:12 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/27 08:40:29 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,13 @@ void	push(char *src_stack, char *dst_stack,
 */
 
 void	rotate(char *stack, int qnt_elements);
+void	rotate_rr(t_stack	*stacks);
+
+/*
+** rotateMethods.c
+*/
+
+void	reverse_rotate(char *stack, int qnt_elements);
+void	reverse_rotate_rrr(t_stack	*stacks);
 
 #endif
