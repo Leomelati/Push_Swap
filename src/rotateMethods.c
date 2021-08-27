@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 07:19:25 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/27 08:32:46 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/27 08:35:40 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,10 @@ void	rotate(char *stack, int qnt_elements)
 		push_one_up(stack, qnt_elements);
 		stack[qnt_elements - 1] = temp;
 	}
+}
+
+void	rotate_rr(t_stack	*stacks)
+{
+	rotate(stacks->a, stacks->qnt_a);
+	rotate(stacks->b, stacks->qnt_b);
 }
