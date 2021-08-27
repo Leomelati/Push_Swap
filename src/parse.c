@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:57:46 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/27 05:53:49 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/27 09:09:58 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	check_args(int argc, char **argv)
 
 int	check_duplicate(t_stack *stack, int num, int index)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < index)
