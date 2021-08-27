@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:57:46 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/18 05:45:11 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/27 05:53:49 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,13 @@ int	check_duplicate(t_stack *stack, int num, int index)
 
 int	parse_stack(int argc, char **argv, t_stack *stack)
 {
-	int	i;
-	int	num;
+	int		i;
+	char	num;
 
 	i = 1;
 	while (i < argc)
 	{
-		num = ft_atoi(argv[i]);
+		num = *argv[i];
 		check_duplicate(stack, num, i - 1);
 		i++;
 	}

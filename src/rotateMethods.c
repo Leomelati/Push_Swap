@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   rotateMethods.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/17 06:57:35 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/27 05:51:59 by lmartins         ###   ########.fr       */
+/*   Created: 2021/08/27 07:19:25 by lmartins          #+#    #+#             */
+/*   Updated: 2021/08/27 07:22:33 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	init_stacks(int argc)
+void	rotate(char *stack, int qnt_elements)
 {
-	t_stack stack;
-	int n_elements;
-	int	i;
+	char	temp;
 
-	n_elements = argc - 1;
-	stack.a = ft_calloc(n_elements, sizeof(char));
-	stack.b = ft_calloc(n_elements, sizeof(char));
-	stack.qnt_a = argc;
-	stack.qnt_b = 0;
-	return (stack);
+	if (qnt_elements > 1)
+	{
+		temp = stack[0];
+		push_one_up(stack, qnt_elements);
+		stack[qnt_elements] = temp;
+	}
 }

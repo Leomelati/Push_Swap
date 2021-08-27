@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:51:04 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/18 05:44:16 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/27 07:23:12 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@
 
 typedef struct s_stack
 {
-	int		*a;
-	int		*b;
+	char	*a;
+	char	*b;
+	int		qnt_a;
+	int		qnt_b;
 }				t_stack;
 
 /*
@@ -70,5 +72,32 @@ char	*define_error_message(int error_code);
 */
 
 t_stack	init_stacks(int argc);
+
+/*
+** auxiliar.c
+*/
+
+void	push_one_down(char *stack, int qnt_elements);
+void	push_one_up(char *stack, int qnt_elements);
+
+/*
+** swapMethods.c
+*/
+
+void	swap(char *stack, int qnt_elements);
+void	swap_ss(t_stack *stack);
+
+/*
+** pushMethods.c
+*/
+
+void	push(char *src_stack, char *dst_stack,
+			int *src_elements, int *dst_elements);
+
+/*
+** rotateMethods.c
+*/
+
+void	rotate(char *stack, int qnt_elements);
 
 #endif

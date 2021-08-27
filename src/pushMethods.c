@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   pushMethods.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/17 06:57:35 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/27 05:51:59 by lmartins         ###   ########.fr       */
+/*   Created: 2021/08/27 06:33:37 by lmartins          #+#    #+#             */
+/*   Updated: 2021/08/27 07:16:32 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	init_stacks(int argc)
+void	push(char *src_stack, char *dst_stack, int *src_elements,
+				int *dst_elements)
 {
-	t_stack stack;
-	int n_elements;
-	int	i;
+	char	temp;
 
-	n_elements = argc - 1;
-	stack.a = ft_calloc(n_elements, sizeof(char));
-	stack.b = ft_calloc(n_elements, sizeof(char));
-	stack.qnt_a = argc;
-	stack.qnt_b = 0;
-	return (stack);
+	if (src_elements > 0)
+	{
+		push_one_down(dst_stack, *dst_elements);
+		dst_stack[0] = src_stack[0];
+		(*src_elements)--;
+		(*dst_elements)++;
+		push_one_up(src_stack, *src_elements);
+	}
 }
