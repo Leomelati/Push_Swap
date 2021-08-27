@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 06:33:37 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/27 07:16:32 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/27 08:29:27 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ void	push(char *src_stack, char *dst_stack, int *src_elements,
 		(*src_elements)--;
 		(*dst_elements)++;
 		push_one_up(src_stack, *src_elements);
+		src_stack[*src_elements] = '\0';
 	}
 }
