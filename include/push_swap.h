@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:51:04 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/31 06:58:51 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/31 07:20:51 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,13 @@ t_stack	init_stacks(int argc);
 
 void	push_one_down(int *stack, int qnt_elements);
 void	push_one_up(int *stack, int qnt_elements);
+void	simplify_numbers(t_stack *stacks);
+
+/*
+** sort.c
+*/
+
+int	already_sorted(t_stack	stacks);
 
 /*
 ** swapMethods.c

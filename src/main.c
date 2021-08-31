@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:28:49 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/31 06:31:19 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/31 07:26:34 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,53 +38,59 @@ int	main(int argc, char **argv)
 	check_args(argc, argv);
 	stacks = init_stacks(argc);
 	
-	printf("--INICIAL--\n");
 	parse_stack(argc, argv, &stacks);
-	print_both(&stacks);
+	if (!already_sorted(stacks))
+	{
+		simplify_numbers(&stacks);
+		print_both(&stacks);
+	}
 
-	printf("--PUSH A--\n");
-	push(stacks.a, stacks.b, &stacks.qnt_a, &stacks.qnt_b);
-	print_both(&stacks);
+	
+	// print_both(&stacks);
 
-	printf("--PUSH A--\n");
-	push(stacks.a, stacks.b, &stacks.qnt_a, &stacks.qnt_b);
-	print_both(&stacks);
+	// printf("--PUSH A--\n");
+	// push(stacks.a, stacks.b, &stacks.qnt_a, &stacks.qnt_b);
+	// print_both(&stacks);
 
-	printf("--SWAP A--\n");
-	swap(stacks.a, stacks.qnt_a);
-	print_both(&stacks);
+	// printf("--PUSH A--\n");
+	// push(stacks.a, stacks.b, &stacks.qnt_a, &stacks.qnt_b);
+	// print_both(&stacks);
 
-	printf("--SWAP B--\n");
-	swap(stacks.b, stacks.qnt_b);
-	print_both(&stacks);
+	// printf("--SWAP A--\n");
+	// swap(stacks.a, stacks.qnt_a);
+	// print_both(&stacks);
 
-	printf("--SWAP SS--\n");
-	swap_ss(&stacks);
-	print_both(&stacks);
+	// printf("--SWAP B--\n");
+	// swap(stacks.b, stacks.qnt_b);
+	// print_both(&stacks);
 
-	printf("--ROTATE A--\n");
-	rotate(stacks.a, stacks.qnt_a);
-	print_both(&stacks);
+	// printf("--SWAP SS--\n");
+	// swap_ss(&stacks);
+	// print_both(&stacks);
 
-	printf("--ROTATE B--\n");
-	rotate(stacks.b, stacks.qnt_b);
-	print_both(&stacks);
+	// printf("--ROTATE A--\n");
+	// rotate(stacks.a, stacks.qnt_a);
+	// print_both(&stacks);
 
-	printf("--ROTATE RR--\n");
-	rotate_rr(&stacks);
-	print_both(&stacks);
+	// printf("--ROTATE B--\n");
+	// rotate(stacks.b, stacks.qnt_b);
+	// print_both(&stacks);
 
-	printf("--REVERSE ROTATE A--\n");
-	reverse_rotate(stacks.a, stacks.qnt_a);
-	print_both(&stacks);
+	// printf("--ROTATE RR--\n");
+	// rotate_rr(&stacks);
+	// print_both(&stacks);
 
-	printf("--REVERSE ROTATE B--\n");
-	reverse_rotate(stacks.b, stacks.qnt_b);
-	print_both(&stacks);
+	// printf("--REVERSE ROTATE A--\n");
+	// reverse_rotate(stacks.a, stacks.qnt_a);
+	// print_both(&stacks);
 
-	printf("--REVERSE ROTATE RR--\n");
-	reverse_rotate_rrr(&stacks);
-	print_both(&stacks);
+	// printf("--REVERSE ROTATE B--\n");
+	// reverse_rotate(stacks.b, stacks.qnt_b);
+	// print_both(&stacks);
+
+	// printf("--REVERSE ROTATE RR--\n");
+	// reverse_rotate_rrr(&stacks);
+	// print_both(&stacks);
 
 	return (0);
 }
