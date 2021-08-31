@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:53:43 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/27 09:09:10 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/31 06:48:56 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,8 @@ int	close_program(void)
 	return (0);
 }
 
-int	ft_error(int i)
+int	ft_error()
 {
-	ft_putendl_fd(define_error_message(i), 1);
+	ft_putendl_fd("Error\n", 1);
 	return (close_program());
-}
-
-char	*define_error_message(int error_code)
-{
-	if (error_code == ERROR_ARG)
-		return ("Error\nInvalid number of args.");
-	else if (error_code == ERROR_CHAR)
-		return ("Error\nInvalid char.");
-	else if (error_code == ERROR_DUPLICATED)
-		return ("Error\nDuplicated value.");
-	return (NULL);
 }

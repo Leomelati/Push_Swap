@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:51:04 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/27 08:40:29 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/31 06:58:51 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@
 
 typedef struct s_stack
 {
-	char	*a;
-	char	*b;
-	int		qnt_a;
-	int		qnt_b;
+	int	a[5000];
+	int	b[5000];
+	int	qnt_a;
+	int	qnt_b;
 }				t_stack;
 
 /*
@@ -38,9 +38,8 @@ typedef struct s_stack
 
 # define FALSE 0
 # define TRUE 1
-# define ERROR_ARG -1
-# define ERROR_CHAR -2
-# define ERROR_DUPLICATED -3
+# define STR_INT_MAX "2147483647"
+# define STR_INT_MIN "-2147483648"
 
 /*
 ** Push_Swap Prototypes
@@ -56,16 +55,16 @@ typedef struct s_stack
 
 int	check_letters(int argc, char **argv);
 int	check_args(int argc, char **argv);
+int check_int_limits(char *argv);
 int	check_duplicate(t_stack *stack, int num, int index);
 int	parse_stack(int argc, char **argv, t_stack *stacks);
 
 /*
-** free.c
+** close.c
 */
 
 int		close_program();
-int		ft_error(int i);
-char	*define_error_message(int error_code);
+int		ft_error();
 
 /*
 ** init.c
@@ -77,35 +76,35 @@ t_stack	init_stacks(int argc);
 ** auxiliar.c
 */
 
-void	push_one_down(char *stack, int qnt_elements);
-void	push_one_up(char *stack, int qnt_elements);
+void	push_one_down(int *stack, int qnt_elements);
+void	push_one_up(int *stack, int qnt_elements);
 
 /*
 ** swapMethods.c
 */
 
-void	swap(char *stack, int qnt_elements);
+void	swap(int *stack, int qnt_elements);
 void	swap_ss(t_stack *stack);
 
 /*
 ** pushMethods.c
 */
 
-void	push(char *src_stack, char *dst_stack,
+void	push(int *src_stack, int *dst_stack,
 			int *src_elements, int *dst_elements);
 
 /*
 ** rotateMethods.c
 */
 
-void	rotate(char *stack, int qnt_elements);
+void	rotate(int *stack, int qnt_elements);
 void	rotate_rr(t_stack	*stacks);
 
 /*
 ** rotateMethods.c
 */
 
-void	reverse_rotate(char *stack, int qnt_elements);
+void	reverse_rotate(int *stack, int qnt_elements);
 void	reverse_rotate_rrr(t_stack	*stacks);
 
 #endif

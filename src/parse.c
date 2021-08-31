@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:57:46 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/27 09:09:58 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/31 06:57:03 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,19 @@ int	check_letters(int argc, char **argv)
 int	check_args(int argc, char **argv)
 {
 	if (argc <= 1)
-		ft_error(ERROR_ARG);
+		ft_error();
 	if (!check_letters(argc, argv))
-		ft_error(ERROR_CHAR);
+		ft_error();
+}
+
+int check_int_limits(char *argv)
+{
+	long long int num;
+
+	num = ft_atoi(argv);
+	if (num >= INT_MAX || num <= INT_MIN)
+		ft_error();
+	return (num);
 }
 
 int	check_duplicate(t_stack *stack, int num, int index)
@@ -53,7 +63,7 @@ int	check_duplicate(t_stack *stack, int num, int index)
 	while (i < index)
 	{
 		if (stack->a[i] == num && index != 1)
-			ft_error(ERROR_DUPLICATED);
+			ft_error();
 		i++;
 	}
 	stack->a[i] = num;
@@ -67,7 +77,7 @@ int	parse_stack(int argc, char **argv, t_stack *stack)
 	i = 1;
 	while (i < argc)
 	{
-		num = *argv[i];
+		num = check_int_limits(argv[i]);
 		check_duplicate(stack, num, i - 1);
 		i++;
 	}

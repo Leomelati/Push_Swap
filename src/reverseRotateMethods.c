@@ -6,13 +6,13 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 08:38:39 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/28 06:49:49 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/31 06:27:52 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate(char *stack, int qnt_elements)
+void	reverse_rotate(int *stack, int qnt_elements)
 {
 	char	temp;
 	char	last;

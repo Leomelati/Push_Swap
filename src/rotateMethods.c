@@ -6,13 +6,13 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 07:19:25 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/27 08:35:40 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/31 06:27:55 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(char *stack, int qnt_elements)
+void	rotate(int *stack, int qnt_elements)
 {
 	char	temp;
 

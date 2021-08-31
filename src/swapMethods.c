@@ -6,13 +6,13 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 05:44:50 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/27 06:43:38 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/31 06:27:23 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(char *stack, int qnt_elements)
+void	swap(int *stack, int qnt_elements)
 {
 	char	temp;
 

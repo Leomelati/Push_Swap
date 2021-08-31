@@ -6,13 +6,13 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 06:37:30 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/27 08:52:51 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/31 06:28:36 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_one_down(char *stack, int qnt_elements)
+void	push_one_down(int *stack, int qnt_elements)
 {
 	int		i;
 	char	temp;
@@ -27,7 +27,7 @@ void	push_one_down(char *stack, int qnt_elements)
 	}
 }
 
-void	push_one_up(char *stack, int qnt_elements)
+void	push_one_up(int *stack, int qnt_elements)
 {
 	int		i;
 

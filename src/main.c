@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:28:49 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/27 08:45:05 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/08/31 06:31:19 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,20 @@
 
 void	print_both(t_stack	*stacks)
 {
-	printf("A: %s - QNT:%d\n", stacks->a, stacks->qnt_a);
-	printf("B: %s - QNT:%d\n", stacks->b, stacks->qnt_b);
+
+	printf("A: ");
+	for (size_t i = 0; i < stacks->qnt_a; i++)
+	{
+		printf("%d ", stacks->a[i]);
+	}
+	printf("- QNT:%d\n", stacks->qnt_a);
+
+	printf("B: ");
+	for (size_t i = 0; i < stacks->qnt_b; i++)
+	{
+		printf("%d ", stacks->b[i]);
+	}
+	printf("- QNT:%d\n", stacks->qnt_b);
 	printf("\n");
 }
 
