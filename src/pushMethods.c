@@ -6,24 +6,40 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 06:33:37 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/31 06:27:49 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/01 07:58:17 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(int *src_stack, int *dst_stack, int *src_elements,
-				int *dst_elements)
+void	push_a(t_stack *stacks)
 {
 	char	temp;
 
-	if (src_elements > 0)
+	if (stacks->qnt_b > 0)
 	{
-		push_one_down(dst_stack, *dst_elements);
-		dst_stack[0] = src_stack[0];
-		(*src_elements)--;
-		(*dst_elements)++;
-		push_one_up(src_stack, *src_elements);
-		src_stack[*src_elements] = '\0';
+		push_one_down(stacks->b, stacks->qnt_b);
+		stacks->b[0] = stacks->a[0];
+		stacks->qnt_a--;
+		stacks->qnt_b++;
+		push_one_up(stacks->a, stacks->qnt_a);
+		stacks->a[stacks->qnt_a] = '\0';
 	}
+	ft_putendl_fd("pa\n", 1);
+}
+
+void	push_b(t_stack *stacks)
+{
+	char	temp;
+
+	if (stacks->qnt_a > 0)
+	{
+		push_one_down(stacks->a, stacks->qnt_a);
+		stacks->a[0] = stacks->b[0];
+		stacks->qnt_b--;
+		stacks->qnt_a++;
+		push_one_up(stacks->b, stacks->qnt_b);
+		stacks->b[stacks->qnt_b] = '\0';
+	}
+	ft_putendl_fd("pb\n", 1);
 }

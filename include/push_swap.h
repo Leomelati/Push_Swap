@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:51:04 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/31 07:20:51 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/01 08:17:23 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,10 @@ typedef struct s_stack
 
 # define FALSE 0
 # define TRUE 1
-# define STR_INT_MAX "2147483647"
-# define STR_INT_MIN "-2147483648"
+
+# define OPTION_A 'a'
+# define OPTION_B 'b'
+# define OPTION_NULL '\0'
 
 /*
 ** Push_Swap Prototypes
@@ -48,6 +50,8 @@ typedef struct s_stack
 /*
 ** main.c
 */
+
+void	print_both(t_stack	*stacks);
 
 /*
 ** parse.c
@@ -84,34 +88,41 @@ void	simplify_numbers(t_stack *stacks);
 ** sort.c
 */
 
-int	already_sorted(t_stack	stacks);
+int		already_sorted(t_stack	stacks);
+void	direct_sort(t_stack	*stacks);
+
+/*
+** sortThree.c
+*/
+
+void	sort_three(t_stack	*stacks);
 
 /*
 ** swapMethods.c
 */
 
-void	swap(int *stack, int qnt_elements);
+void	swap(int *stack, int qnt_elements, char option);
 void	swap_ss(t_stack *stack);
 
 /*
 ** pushMethods.c
 */
 
-void	push(int *src_stack, int *dst_stack,
-			int *src_elements, int *dst_elements);
+void	push_a(t_stack *stacks);
+void	push_b(t_stack *stacks);
 
 /*
 ** rotateMethods.c
 */
 
-void	rotate(int *stack, int qnt_elements);
+void	rotate(int *stack, int qnt_elements, char option);
 void	rotate_rr(t_stack	*stacks);
 
 /*
 ** rotateMethods.c
 */
 
-void	reverse_rotate(int *stack, int qnt_elements);
+void	reverse_rotate(int *stack, int qnt_elements, char option);
 void	reverse_rotate_rrr(t_stack	*stacks);
 
 #endif

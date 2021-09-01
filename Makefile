@@ -6,7 +6,7 @@
 #    By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/24 10:59:55 by lmartins          #+#    #+#              #
-#    Updated: 2021/08/31 07:02:00 by lmartins         ###   ########.fr        #
+#    Updated: 2021/09/01 07:17:18 by lmartins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ SRC_DIR = ./src
 SRC = $(SRC_DIR)/main.c $(SRC_DIR)/close.c $(SRC_DIR)/parse.c $(SRC_DIR)/init.c \
 $(SRC_DIR)/auxiliar.c $(SRC_DIR)/swapMethods.c $(SRC_DIR)/pushMethods.c \
 $(SRC_DIR)/rotateMethods.c $(SRC_DIR)/reverseRotateMethods.c $(SRC_DIR)/sort.c \
+$(SRC_DIR)/sortThree.c $(SRC_DIR)/sortFive.c $(SRC_DIR)/sortOneHundred.c \
+$(SRC_DIR)/sortFiveHundred.c
 
 OBJ_FILES = $(SRC:.c=.o)
 

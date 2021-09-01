@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 06:37:30 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/31 07:26:16 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/01 08:43:22 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,30 +39,51 @@ void	push_one_up(int *stack, int qnt_elements)
 	}
 }
 
+int	*copy_and_sort(t_stack *stacks)
+{
+	int	i;
+	int	temp_num;
+	int	*array;
+
+	array = ft_calloc(5000, sizeof(int));
+	i = 0;
+	while (i < stacks->qnt_a)
+	{
+		array[i] = stacks->a[i];
+		i++;
+	}
+	i = 0;
+	while (i < stacks->qnt_a - 1)
+	{
+		if (array[i] >= array[i + 1])
+		{
+			temp_num = array[i + 1];
+			array[i + 1] = array[i];
+			array[i] = temp_num;
+		}
+		i++;
+	}
+	return (array);
+}
+
 void	simplify_numbers(t_stack *stacks)
 {
 	int	i;
 	int	j;
-	int	num;
-	int	menor;
+	int	*temp;
 
-	num = 0;
+	temp = copy_and_sort(stacks);
 	i = 0;
 	while (i < stacks->qnt_a)
 	{
 		j = 0;
-		menor = stacks->a[j];
-		while (j < stacks->qnt_a - 1)
+		while (j < stacks->qnt_a)
 		{
-			if (stacks->a[j] <= menor)
-				menor = stacks->a[j];
+			if (stacks->a[i] == temp[j])
+				stacks->a[i] = j;
 			j++;
 		}
-		j = 0;
-		while (stacks->a[j] != menor)
-			j++;
-		stacks->a[j] = num;
-		num++;
 		i++;
 	}
+	free(temp);
 }
