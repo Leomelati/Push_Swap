@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:51:04 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/01 08:17:23 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/02 06:03:16 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,13 @@ void	direct_sort(t_stack	*stacks);
 */
 
 void	sort_three(t_stack	*stacks);
+
+/*
+** sortFive.c
+*/
+
+void	order_new_number(t_stack	*stacks);
+void	sort_five(t_stack	*stacks);
 
 /*
 ** swapMethods.c

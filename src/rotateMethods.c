@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 07:19:25 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/01 07:49:51 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/02 06:43:26 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ void	rotate(int *stack, int qnt_elements, char option)
 		stack[qnt_elements - 1] = temp;
 	}
 	if (option == 'a')
-		ft_putendl_fd("ra\n", 1);
+		ft_putstr_fd("ra\n", STDOUT_FILENO);
 	else if (option == 'b')
-		ft_putendl_fd("rb\n", 1);
+		ft_putstr_fd("rb\n", STDOUT_FILENO);
 }
 
 void	rotate_rr(t_stack	*stacks)
 {
 	rotate(stacks->a, stacks->qnt_a, OPTION_NULL);
 	rotate(stacks->b, stacks->qnt_b, OPTION_NULL);
-	ft_putendl_fd("rr\n", 1);
+	ft_putstr_fd("rr\n", STDOUT_FILENO);
 }

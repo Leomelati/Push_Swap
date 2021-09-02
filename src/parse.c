@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:57:46 by lmartins          #+#    #+#             */
-/*   Updated: 2021/08/31 06:57:03 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/02 07:00:20 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int check_int_limits(char *argv)
 	long long int num;
 
 	num = ft_atoi(argv);
-	if (num >= INT_MAX || num <= INT_MIN)
+	if (num > INT_MAX || num < INT_MIN)
 		ft_error();
 	return (num);
 }
@@ -72,7 +72,7 @@ int	check_duplicate(t_stack *stack, int num, int index)
 int	parse_stack(int argc, char **argv, t_stack *stack)
 {
 	int		i;
-	char	num;
+	int		num;
 
 	i = 1;
 	while (i < argc)
