@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 07:18:33 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/02 05:59:08 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/04 08:22:05 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,17 @@ void	order_new_number(t_stack	*stacks)
 void	sort_five(t_stack	*stacks)
 {
 	push_b(stacks);
+	print_both(stacks);
 	push_b(stacks);
+	print_both(stacks);
 	sort_three(stacks);
+	print_both(stacks);
 	push_a(stacks);
+	print_both(stacks);
 	order_new_number(stacks);
+	print_both(stacks);
 	push_a(stacks);
+	print_both(stacks);
 	order_new_number(stacks);
+	print_both(stacks);
 }

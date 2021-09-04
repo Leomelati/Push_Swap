@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:57:46 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/02 07:00:20 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/04 08:14:05 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,29 @@ int	check_letters(int argc, char **argv)
 	return (TRUE);
 }
 
-int	check_args(int argc, char **argv)
-{
-	if (argc <= 1)
-		ft_error();
-	if (!check_letters(argc, argv))
-		ft_error();
-}
-
 int check_int_limits(char *argv)
 {
 	long long int num;
+	int	negative;
+	int	i;
 
-	num = ft_atoi(argv);
-	if (num > INT_MAX || num < INT_MIN)
-		ft_error();
+	negative = FALSE;
+	i = 0;
+	if (argv[0] == '-')
+	{
+		negative = TRUE;
+		i++;
+	}
+	num = 0;
+	while (argv[i] != '\0')
+	{
+		num = num * 10 + argv[i] - '0';
+		if (negative == TRUE && - num < INT_MIN)
+			ft_error();
+		else if (negative == FALSE && num > INT_MAX)
+			ft_error();
+		i++;
+	}
 	return (num);
 }
 
@@ -62,7 +70,7 @@ int	check_duplicate(t_stack *stack, int num, int index)
 	i = 0;
 	while (i < index)
 	{
-		if (stack->a[i] == num && index != 1)
+		if (stack->a[i] == num && index != 0)
 			ft_error();
 		i++;
 	}
