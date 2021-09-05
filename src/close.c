@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:53:43 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/02 06:12:32 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/05 09:21:24 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	close_program(void)
 	return (0);
 }
 
-int	ft_error()
+int	ft_error(void)
 {
 	ft_putstr_fd("Error\n", STDERR_FILENO);
 	return (close_program());

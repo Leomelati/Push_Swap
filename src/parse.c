@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:57:46 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/04 08:14:05 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/05 09:23:09 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,30 +37,30 @@ int	check_letters(int argc, char **argv)
 	return (TRUE);
 }
 
-int check_int_limits(char *argv)
+int	check_int_limits(char *argv)
 {
-	long long int num;
-	int	negative;
-	int	i;
+	long long int	num;
+	char			signal;
+	int				i;
 
-	negative = FALSE;
+	signal = 1;
 	i = 0;
 	if (argv[0] == '-')
 	{
-		negative = TRUE;
+		signal = -1;
 		i++;
 	}
 	num = 0;
 	while (argv[i] != '\0')
 	{
 		num = num * 10 + argv[i] - '0';
-		if (negative == TRUE && - num < INT_MIN)
+		if (signal == -1 && - num < INT_MIN)
 			ft_error();
-		else if (negative == FALSE && num > INT_MAX)
+		else if (signal == 1 && num > INT_MAX)
 			ft_error();
 		i++;
 	}
-	return (num);
+	return (num * signal);
 }
 
 int	check_duplicate(t_stack *stack, int num, int index)

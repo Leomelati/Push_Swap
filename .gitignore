@@ -50,4 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Outros
 push_swap
+checker
+log_error/*
+tester.sh
+checker_linux

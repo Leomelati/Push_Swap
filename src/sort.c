@@ -6,13 +6,13 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 07:02:03 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/02 05:35:34 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/05 09:24:15 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int already_sorted(t_stack	stacks)
+int	already_sorted(t_stack	stacks)
 {
 	int	i;
 
@@ -20,10 +20,10 @@ int already_sorted(t_stack	stacks)
 	while (i < stacks.qnt_a - 1)
 	{
 		if (stacks.a[i] > stacks.a[i + 1])
-			return FALSE;
+			return (FALSE);
 		i++;
 	}
-	return TRUE;
+	return (TRUE);
 }
 
 void	direct_sort(t_stack	*stacks)
@@ -36,5 +36,4 @@ void	direct_sort(t_stack	*stacks)
 	// 	sort_one_hundred();
 	// else
 	// 	sort_five_hundred();
-	
 }
