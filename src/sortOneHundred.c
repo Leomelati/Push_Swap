@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 06:55:13 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/06 07:46:43 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/06 09:35:04 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,55 @@ void	simplify_numbers(t_stack	*stacks)
 	}
 }
 
+int	define_max_bits(t_stack	*stacks)
+{
+	int	max_num;
+	int	max_bits;
+	int	i;
+
+	i = 0;
+	max_num = stacks->a[0];
+	while (i < stacks->qnt_a)
+	{
+		if (stacks->a[i] > max_num)
+			max_num = stacks->a[i];
+		i++;
+	}
+	max_bits = 0;
+	while ((max_num >> max_bits) != 0)
+		max_bits++;
+	return (max_bits);
+}
+
+void	radix_sort(t_stack	*stacks)
+{
+	int	i;
+	int	j;
+	int	max_bits;
+	int	num;
+
+	max_bits = define_max_bits(stacks);
+	i = 0;
+	while (i <= max_bits)
+	{
+		j = 0;
+		while (j < stacks->qnt_a)
+		{
+			num = stacks->a[0];
+			if (((num >> i) & 1) == 1)
+				push_b(stacks);
+			else
+				rotate(stacks->a, stacks->qnt_a, OPTION_A);
+			j++;
+		}
+		while (stacks->qnt_b > 0)
+			push_a(stacks);
+		i++;
+	}
+}
+
 void	sort_one_hundred(t_stack	*stacks)
 {
 	simplify_numbers(stacks);
-	print_both(stacks);
+	radix_sort(stacks);
 }
