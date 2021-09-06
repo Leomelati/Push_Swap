@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:28:49 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/05 09:22:32 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/06 23:12:44 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	print_both(t_stack	*stacks)
 {
-
 	printf("A: ");
 	for (size_t i = 0; i < stacks->qnt_a; i++)
 	{

@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 06:55:13 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/06 09:35:04 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/07 01:36:52 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,19 +63,21 @@ void	radix_sort(t_stack	*stacks)
 	int	j;
 	int	max_bits;
 	int	num;
+	int	size;
 
 	max_bits = define_max_bits(stacks);
 	i = 0;
-	while (i <= max_bits)
+	while (i < max_bits)
 	{
 		j = 0;
-		while (j < stacks->qnt_a)
+		size = stacks->qnt_a;
+		while (j < size)
 		{
 			num = stacks->a[0];
 			if (((num >> i) & 1) == 1)
-				push_b(stacks);
-			else
 				rotate(stacks->a, stacks->qnt_a, OPTION_A);
+			else
+				push_b(stacks);
 			j++;
 		}
 		while (stacks->qnt_b > 0)
