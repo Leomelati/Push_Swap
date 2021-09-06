@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:51:04 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/05 07:30:40 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/06 07:45:55 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,12 @@ typedef struct s_stack
 
 # define FALSE 0
 # define TRUE 1
+
+# define CHUNK_SIZE 20
+# define BOTTOM 0
+# define TOP 1
+# define RA 1
+# define RRA -1
 
 # define OPTION_A 'a'
 # define OPTION_B 'b'
@@ -82,7 +88,8 @@ t_stack	init_stacks(int argc);
 
 void	push_one_down(int *stack, int qnt_elements);
 void	push_one_up(int *stack, int qnt_elements);
-void	simplify_numbers(t_stack *stacks);
+void	copy_array(int *src, int *dst, int qnt_elements);
+void	sort_array(int *stack, int qnt_elements);
 
 /*
 ** sort.c
@@ -101,8 +108,21 @@ void	sort_three(t_stack	*stacks);
 ** sortFive.c
 */
 
-void	order_new_number(t_stack	*stacks);
+void	order_new_four(t_stack	*stacks);
+void	order_new_five(t_stack	*stacks);
 void	sort_five(t_stack	*stacks);
+
+/*
+** sortOneHundred.c
+*/
+
+void	sort_one_hundred(t_stack	*stacks);
+
+/*
+** sortFiveHundred.c
+*/
+
+void	sort_five_hundred(t_stack	*stacks);
 
 /*
 ** swapMethods.c

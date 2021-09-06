@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 06:37:30 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/05 07:48:25 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/06 07:45:28 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,40 @@ void	push_one_up(int *stack, int qnt_elements)
 		i++;
 	}
 	stack[i + 1] = 0;
+}
+
+void	copy_array(int *src, int *dst, int qnt_elements)
+{
+	int	i;
+
+	i = 0;
+	while (i < qnt_elements)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+}
+
+void	sort_array(int *stack, int qnt_elements)
+{
+	int	i;
+	int	j;
+	int	temp;
+
+	i = 0;
+	while (i < qnt_elements)
+	{
+		j = i + 1;
+		while (j < qnt_elements)
+		{
+			if (stack[i] > stack[j])
+			{
+				temp = stack[i];
+				stack[i] = stack[j];
+				stack[j] = temp;
+			}
+			j++;
+		}
+		i++;
+	}
 }
