@@ -6,34 +6,16 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:28:49 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/06 23:12:44 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/07 06:52:34 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_both(t_stack	*stacks)
-{
-	printf("A: ");
-	for (size_t i = 0; i < stacks->qnt_a; i++)
-	{
-		printf("%d ", stacks->a[i]);
-	}
-	printf("- QNT:%d\n", stacks->qnt_a);
-
-	printf("B: ");
-	for (size_t i = 0; i < stacks->qnt_b; i++)
-	{
-		printf("%d ", stacks->b[i]);
-	}
-	printf("- QNT:%d\n", stacks->qnt_b);
-	printf("\n");
-}
-
 void	check_one_arg(char **argv)
 {
-	int	i;
-	int	j;
+	int		i;
+	size_t	j;
 
 	i = 0;
 	while (argv[i])
@@ -49,12 +31,23 @@ void	check_one_arg(char **argv)
 	}
 }
 
-int	check_args(int argc, char **argv)
+void	check_args(int argc, char **argv)
 {
 	if (argc == 2)
 		check_one_arg(argv);
 	if (!check_letters(argc, argv))
 		ft_error();
+}
+
+t_stack	init_stacks(int argc)
+{
+	t_stack	stack;
+	int		n_elements;
+
+	n_elements = argc - 1;
+	stack.qnt_a = n_elements;
+	stack.qnt_b = 0;
+	return (stack);
 }
 
 int	main(int argc, char **argv)
@@ -66,6 +59,5 @@ int	main(int argc, char **argv)
 	parse_stack(argc, argv, &stacks);
 	if (!already_sorted(stacks))
 		direct_sort(&stacks);
-	// print_both(&stacks);
 	return (0);
 }

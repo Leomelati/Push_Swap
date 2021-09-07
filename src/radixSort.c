@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sortOneHundred.c                                   :+:      :+:    :+:   */
+/*   radixSort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 06:55:13 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/07 01:36:52 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/07 06:49:14 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	radix_sort(t_stack	*stacks)
 	}
 }
 
-void	sort_one_hundred(t_stack	*stacks)
+void	sort_more_than_five(t_stack	*stacks)
 {
 	simplify_numbers(stacks);
 	radix_sort(stacks);

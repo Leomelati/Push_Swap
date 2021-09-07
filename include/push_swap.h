@@ -6,13 +6,12 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:51:04 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/06 07:45:55 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/07 07:02:35 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef PUSHSWAP_H
-# define PUSHSWAP_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 /*
 ** Includes
@@ -57,30 +56,26 @@ typedef struct s_stack
 ** main.c
 */
 
-void	print_both(t_stack	*stacks);
-int	check_args(int argc, char **argv);
+void	check_one_arg(char **argv);
+void	check_args(int argc, char **argv);
+t_stack	init_stacks(int argc);
+int		main(int argc, char **argv);
 
 /*
 ** parse.c
 */
 
-int	check_letters(int argc, char **argv);
-int check_int_limits(char *argv);
-int	check_duplicate(t_stack *stack, int num, int index);
-int	parse_stack(int argc, char **argv, t_stack *stacks);
+int		check_letters(int argc, char **argv);
+int		check_int_limits(char *argv);
+void	check_duplicate(t_stack *stack, int num, int index);
+int		parse_stack(int argc, char **argv, t_stack *stacks);
 
 /*
 ** close.c
 */
 
-int		close_program();
-int		ft_error();
-
-/*
-** init.c
-*/
-
-t_stack	init_stacks(int argc);
+int		close_program(void);
+int		ft_error(void);
 
 /*
 ** auxiliar.c
@@ -113,16 +108,13 @@ void	order_new_five(t_stack	*stacks);
 void	sort_five(t_stack	*stacks);
 
 /*
-** sortOneHundred.c
+** radixSort.c
 */
 
-void	sort_one_hundred(t_stack	*stacks);
-
-/*
-** sortFiveHundred.c
-*/
-
-void	sort_five_hundred(t_stack	*stacks);
+void	simplify_numbers(t_stack	*stacks);
+int		define_max_bits(t_stack	*stacks);
+void	radix_sort(t_stack	*stacks);
+void	sort_more_than_five(t_stack	*stacks);
 
 /*
 ** swapMethods.c
@@ -146,7 +138,7 @@ void	rotate(int *stack, int qnt_elements, char option);
 void	rotate_rr(t_stack	*stacks);
 
 /*
-** rotateMethods.c
+** reverseRotateMethods.c
 */
 
 void	reverse_rotate(int *stack, int qnt_elements, char option);

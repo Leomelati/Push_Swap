@@ -6,18 +6,17 @@
 #    By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/24 10:59:55 by lmartins          #+#    #+#              #
-#    Updated: 2021/09/01 07:17:18 by lmartins         ###   ########.fr        #
+#    Updated: 2021/09/07 06:51:40 by lmartins         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Src Infos
 
 SRC_DIR = ./src
-SRC = $(SRC_DIR)/main.c $(SRC_DIR)/close.c $(SRC_DIR)/parse.c $(SRC_DIR)/init.c \
+SRC = $(SRC_DIR)/main.c $(SRC_DIR)/close.c $(SRC_DIR)/parse.c \
 $(SRC_DIR)/auxiliar.c $(SRC_DIR)/swapMethods.c $(SRC_DIR)/pushMethods.c \
 $(SRC_DIR)/rotateMethods.c $(SRC_DIR)/reverseRotateMethods.c $(SRC_DIR)/sort.c \
-$(SRC_DIR)/sortThree.c $(SRC_DIR)/sortFive.c $(SRC_DIR)/sortOneHundred.c \
-$(SRC_DIR)/sortFiveHundred.c
+$(SRC_DIR)/sortThree.c $(SRC_DIR)/sortFive.c $(SRC_DIR)/radixSort.c
 
 OBJ_FILES = $(SRC:.c=.o)
 
@@ -27,8 +26,8 @@ LIB = $(LIB_DIR)/libft.a
 
 # Compiler Infos
 
-#CC = gcc -Wall -Wextra -Werror -g
-CC = gcc -g
+CC = gcc -Wall -Wextra -Werror -g
+#CC = gcc -g
 
 INCLUDE = -I ./include -I $(LIB_DIR)
 INCLUDE_FLAGS = -L $(LIB_DIR) -lft

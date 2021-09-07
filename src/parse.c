@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:57:46 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/05 09:23:09 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/07 06:53:31 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	check_letters(int argc, char **argv)
 {
-	int	i;
-	int	l;
-	int	next_l;
+	int		i;
+	size_t	l;
+	int		next_l;
 
 	i = 1;
 	while (i < argc)
@@ -63,7 +63,7 @@ int	check_int_limits(char *argv)
 	return (num * signal);
 }
 
-int	check_duplicate(t_stack *stack, int num, int index)
+void	check_duplicate(t_stack *stack, int num, int index)
 {
 	int	i;
 

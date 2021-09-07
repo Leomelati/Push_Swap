@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 07:02:03 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/07 01:32:45 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/07 06:49:14 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ void	direct_sort(t_stack	*stacks)
 	else if (stacks->qnt_a <= 5)
 		sort_five(stacks);
 	else
-		sort_one_hundred(stacks);
+		sort_more_than_five(stacks);
 }
