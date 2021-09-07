@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 06:33:37 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/05 08:37:52 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/07 05:34:05 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 void	push_a(t_stack *stacks)
 {
-	char	temp;
-
 	if (stacks->qnt_b > 0)
 	{
 		push_one_down(stacks->a, stacks->qnt_a);
@@ -31,8 +29,6 @@ void	push_a(t_stack *stacks)
 
 void	push_b(t_stack *stacks)
 {
-	char	temp;
-
 	if (stacks->qnt_a > 0)
 	{
 		push_one_down(stacks->b, stacks->qnt_b);

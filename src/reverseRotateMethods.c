@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 08:38:39 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/04 08:20:46 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/07 05:34:16 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	reverse_rotate(int *stack, int qnt_elements, char option)
 {
-	char	last;
-	int		i;
+	int	last;
+	int	i;
 
 	i = qnt_elements - 1;
 	last = stack[i];

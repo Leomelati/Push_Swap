@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 06:37:30 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/06 07:45:28 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/07 05:33:26 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	push_one_down(int *stack, int qnt_elements)
 {
-	int		i;
-	char	temp;
+	int	i;
+	int	temp;
 
 	i = qnt_elements;
 	while (i > 0)

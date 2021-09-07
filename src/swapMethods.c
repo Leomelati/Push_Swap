@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/27 05:44:50 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/02 06:43:55 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/07 05:34:34 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	swap(int *stack, int qnt_elements, char option)
 {
-	char	temp;
+	int	temp;
 
 	if (qnt_elements >= 2)
 	{
