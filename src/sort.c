@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 07:02:03 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/07 06:49:14 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/10 07:53:23 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,12 @@ int	already_sorted(t_stack	stacks)
 
 void	direct_sort(t_stack	*stacks)
 {
-	if (stacks->qnt_a <= 3)
+	if (stacks->qnt_a == 2)
+	{
+		if (stacks->a[0] > stacks->a[1])
+			swap(stacks->a, stacks->qnt_a, OPTION_A);
+	}
+	else if (stacks->qnt_a <= 3)
 		sort_three(stacks);
 	else if (stacks->qnt_a <= 5)
 		sort_five(stacks);

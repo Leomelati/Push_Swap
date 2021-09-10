@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:51:04 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/07 07:02:35 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/10 07:27:39 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ typedef struct s_stack
 ** main.c
 */
 
-void	check_one_arg(char **argv);
+char	**create_new_argv(int *argc, char **argv, int *alocado);
 void	check_args(int argc, char **argv);
 t_stack	init_stacks(int argc);
 int		main(int argc, char **argv);

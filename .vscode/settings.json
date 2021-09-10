@@ -6,6 +6,9 @@
 	],
 	"files.associations": {
 		"type_traits": "cpp",
-		"push_swap.h": "c"
+		"push_swap.h": "c",
+		"chrono": "c",
+		"algorithm": "c",
+		"random": "c"
 	}
 }

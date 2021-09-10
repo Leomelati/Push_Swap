@@ -6,7 +6,7 @@
 /*   By: lmartins <lmartins@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/13 06:57:46 by lmartins          #+#    #+#             */
-/*   Updated: 2021/09/07 06:53:31 by lmartins         ###   ########.fr       */
+/*   Updated: 2021/09/10 08:01:43 by lmartins         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,21 @@ int	check_letters(int argc, char **argv)
 	size_t	l;
 	int		next_l;
 
-	i = 1;
+	i = 0;
 	while (i < argc)
 	{
 		l = 0;
-		while (l <= ft_strlen(argv[i]))
+		while (l < ft_strlen(argv[i]))
 		{
 			next_l = l + 1;
-			if (l == ft_strlen(argv[i]))
-				next_l = l - 1;
-			if (!ft_isdigit(argv[i][l]) && (!ft_strchr("+- ", argv[i][l])
-				|| ft_strchr("+-", argv[i][next_l])))
+			if (l == (ft_strlen(argv[i]) - 1))
+				next_l--;
+			if (!ft_isdigit(argv[i][l]) && !ft_strchr("+-", argv[i][l]))
+				return (FALSE);
+			else if (ft_isdigit(argv[i][l]) && ft_strchr("+-", argv[i][next_l]))
+				return (FALSE);
+			else if (ft_strchr("+-", argv[i][l])
+				&& ft_strchr("+-", argv[i][next_l]))
 				return (FALSE);
 			l++;
 		}
@@ -82,11 +86,11 @@ int	parse_stack(int argc, char **argv, t_stack *stack)
 	int		i;
 	int		num;
 
-	i = 1;
+	i = 0;
 	while (i < argc)
 	{
 		num = check_int_limits(argv[i]);
-		check_duplicate(stack, num, i - 1);
+		check_duplicate(stack, num, i);
 		i++;
 	}
 	return (TRUE);
